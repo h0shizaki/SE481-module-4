@@ -21,8 +21,8 @@ def create_stem_cache(cleaned_description):
 def create_custom_preprocessor(stop_dict, stem_cache):
     def custom_preprocessor(s) :
         ps = PorterStemmer()
-        s = re.sub(r'[^A-Za-z]', ' ', s)
-        s = re.sub(r'\s+', ' ' , s)
+        # s = re.sub(r'[^A-Za-z]', ' ', s)
+        # s = re.sub(r'\s+', ' ' , s)
         s = word_tokenize(s)
         s = list(set(s) - stop_dict)
         s = [word for word in s if len(word) > 2]
